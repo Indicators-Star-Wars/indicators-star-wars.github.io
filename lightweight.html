@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo | Lightweight Charts</title>
+  <style>html,body{height:100%;margin:0} #chart{height:560px;margin:24px auto;max-width:980px}</style>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <div style="max-width:980px;margin:24px auto;padding:0 16px">
+    <h1>公开演示 / Public Demo — Lightweight Charts</h1>
+    <p><a href="./index.html">← 返回首页 / Back</a></p>
+    <div id="chart"></div>
+  </div>
+  <script>
+    const el = document.getElementById('chart');
+    const chart = LightweightCharts.createChart(el, { width: Math.min(980, window.innerWidth-32), height: 560 });
+    const series = chart.addCandlestickSeries();
+    series.setData([
+      { time: '2024-01-02', open: 100, high: 108, low: 95, close: 102 },
+      { time: '2024-01-03', open: 102, high: 110, low: 101, close: 109 },
+      { time: '2024-01-04', open: 109, high: 112, low: 100, close: 101 },
+      { time: '2024-01-05', open: 101, high: 105, low: 98, close: 103 },
+      { time: '2024-01-06', open: 103, high: 107, low: 100, close: 104 }
+    ]);
+    window.addEventListener('resize', () => chart.applyOptions({ width: Math.min(980, window.innerWidth-32) }));
+  </script>
+  <div style="max-width:980px;margin:0 auto;padding:0 16px">
+    <p>Contact: <a href="mailto:li302820155@gmail.com">li302820155@gmail.com</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo | TradingView Widget</title>
+  <style>html,body,#container{height:100%;margin:0} .wrap{max-width:980px;margin:24px auto;padding:0 16px}</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>公开演示 / Public Demo — TradingView Widget</h1>
+    <p><a href="./index.html">← 返回首页 / Back</a></p>
+    <p>此页面用于展示在线图表，后续将升级为 <b>Advanced Charts</b>。</p>
+    <div id="container">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_abcde" style="height:560px;"></div>
+        <script src="https://s3.tradingview.com/tv.js"></script>
+        <script>
+          new TradingView.widget({
+            "symbol": "BITSTAMP:BTCUSD",
+            "interval": "60",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "container_id": "tradingview_abcde",
+            "autosize": true
+          });
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
+    </div>
+    <p>Contact: <a href="mailto:li302820155@gmail.com">li302820155@gmail.com</a></p>
+  </div>
+</body>
+</html>
